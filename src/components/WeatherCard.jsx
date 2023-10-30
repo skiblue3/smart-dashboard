@@ -3,8 +3,8 @@ import React from 'react'
 
 function WeatherCard() {
 	return (
-		<div className="w-[20rem] bg-white p-4 rounded-sm border border-gray-200">
-			<div className="flex flex-col bg-white rounded p-4 w-full max-w-xs">
+		<div className="w-full bg-white p-4 rounded-sm border border-gray-200">
+			<div className="flex flex-col bg-white rounded p-4 w-full ">
 				<div className="font-bold text-xl">Coimbatore</div>
 				<div className="text-sm text-gray-500">Tuesday 31 October 2023</div>
 				<div className="mt-6 text-6xl self-center inline-flex items-center justify-center rounded-lg text-indigo-400 h-24 w-24">

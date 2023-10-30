@@ -10,10 +10,10 @@ export default function DashboardStatsGrid() {
 					<SlEnergy className="text-2xl text-white" />
 				</div>
 				<div className="pl-4">
-					<span className="text-sm text-gray-500 font-light">Total Energy Consumption</span>
+					<span className="text-sm text-gray-500 font-light">Annual Energy Consumption</span>
 					<div className="flex items-center">
-						<strong className="text-xl text-gray-700 font-semibold">$54232</strong>
-						<span className="text-sm text-green-500 pl-2">+343</span>
+						<strong className="text-xl text-gray-700 font-semibold">54232 kW</strong>
+						<span className="text-sm text-green-500 pl-2">-343</span>
 					</div>
 				</div>
 			</BoxWrapper>
@@ -24,8 +24,8 @@ export default function DashboardStatsGrid() {
 				<div className="pl-4">
 					<span className="text-sm text-gray-500 font-light">Total Savings</span>
 					<div className="flex items-center">
-						<strong className="text-xl text-gray-700 font-semibold">$3423</strong>
-						<span className="text-sm text-green-500 pl-2">-343</span>
+						<strong className="text-xl text-gray-700 font-semibold">3423 kW</strong>
+						<span className="text-sm text-green-500 pl-2">+486</span>
 					</div>
 				</div>
 			</BoxWrapper>
@@ -34,10 +34,10 @@ export default function DashboardStatsGrid() {
 					<IoPeople className="text-2xl text-white" />
 				</div>
 				<div className="pl-4">
-					<span className="text-sm text-gray-500 font-light">Average Consumption Per Month</span>
+					<span className="text-sm text-gray-500 font-light">Carbon Emission Reduction (per month)</span>
 					<div className="flex items-center">
-						<strong className="text-xl text-gray-700 font-semibold">12313</strong>
-						<span className="text-sm text-red-500 pl-2">-30</span>
+						<strong className="text-xl text-gray-700 font-semibold">20 tons</strong>
+						<span className="text-sm text-green-500 pl-2">+5</span>
 					</div>
 				</div>
 			</BoxWrapper>
@@ -46,10 +46,10 @@ export default function DashboardStatsGrid() {
 					<IoCart className="text-2xl text-white" />
 				</div>
 				<div className="pl-4">
-					<span className="text-sm text-gray-500 font-light">Expected Savings</span>
+					<span className="text-sm text-gray-500 font-light">Peak Energy Usage</span>
 					<div className="flex items-center">
-						<strong className="text-xl text-gray-700 font-semibold">16432</strong>
-						<span className="text-sm text-red-500 pl-2">-43</span>
+						<strong className="text-lg text-gray-700 font-semibold">150 kW(11:00AM-1:00PM)</strong>
+						{/* <span className="text-sm text-red-500 pl-2">-43</span> */}
 					</div>
 				</div>
 			</BoxWrapper>

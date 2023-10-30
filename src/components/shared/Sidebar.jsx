@@ -27,12 +27,6 @@ export default function Sidebar({isVisible}) {
 				{DASHBOARD_SIDEBAR_BOTTOM_LINKS.map((link) => (
 					<SidebarLink key={link.key} link={link} pathname={pathname} />
 				))}
-				<div className={classNames(linkClass, 'cursor-pointer text-red-500')}>
-					<span className="text-xl">
-						<HiOutlineLogout />
-					</span>
-					Logout
-				</div>
 			</div>
 		</div>
 	);

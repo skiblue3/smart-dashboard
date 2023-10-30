@@ -1,5 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Line } from 'react-chartjs-2';
+
+// DON'T TOUCH OR REMOVE IT
 import Chart from 'chart.js/auto';
 import { LinearScale, CategoryScale } from 'chart.js';
 
@@ -39,10 +41,12 @@ const UsageEstimateChart = () => {
                 display: true,
             },
         },
+        responsive: true, // Make the chart responsive
+        maintainAspectRatio: false, // Don't maintain aspect ratio to allow responsiveness
     };
 
     return (
-        <div className="chart-container mx-auto max-w-screen-lg bg-white px-4 pt-3 pb-4 rounded-sm border border-gray-200 flex-1">
+        <div className="chart-container mx-auto max-w-full h-[24rem] bg-white px-4 pt-3 pb-4 rounded-sm border border-gray-200 flex-1">
             <Line data={data} options={options} />
         </div>
     );
