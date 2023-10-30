@@ -1,10 +1,4 @@
 export default function TableComponent({ data }) {
-  const tableStyle = {
-  width: "100%", // Adjust the width as needed
-  maxHeight: "400px", // Set a maximum height for vertical scrolling
-  overflowY: "auto", // Enable vertical scrolling when the table overflows vertically
-  overflowX: "auto", // Enable horizontal scrolling when the table overflows horizontally
-};
 
   return (
     <div className="relative overflow-auto shadow-md sm:rounded-lg">
