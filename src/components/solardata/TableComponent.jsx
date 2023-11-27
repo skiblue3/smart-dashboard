@@ -1,11 +1,11 @@
 export default function TableComponent({ data }) {
   return (
-    <div class="flex flex-col h-[85vh]">
-      <div class="-m-1.5 ">
-        <div class="p-1.5 min-w-full inline-block align-middle">
-          <div class="overflow-hidden">
-            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-              <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <div className="flex flex-col h-[85vh]">
+      <div className="-m-1.5 ">
+        <div className="p-1.5 min-w-full inline-block align-middle">
+          <div className="overflow-hidden">
+            <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+              <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                   {Object.keys(data[0]).map((key) => (
                     <th key={key} scope="col" className="px-6 py-3">
@@ -14,7 +14,7 @@ export default function TableComponent({ data }) {
                   ))}
                 </tr>
               </thead>
-              <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+              <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
                 {data.map((item, index) => (
                   <tr
                     key={index}

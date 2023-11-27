@@ -28,12 +28,14 @@ const SolarPanelPage = () => {
 	}
 
 	const parsedData = data.data.map((obj) => {
-		const { _id, ...rest } = obj;
+		const { _id, __v, ...rest } = obj;
 		return rest;
 	});
 
+	console.log(parsedData)
+
   return (
-    <div className="w-[95%] h-[85vh]">
+    <div className="w-[90%] h-[85vh]">
       <div className="overflow-auto">
         <TableComponent data={parsedData} />
       </div>
