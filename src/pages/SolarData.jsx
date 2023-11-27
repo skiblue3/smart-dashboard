@@ -9,7 +9,7 @@ const SolarPanelPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/solar/data');
+        const response = await axios.get(process.env.REACT_APP_BACKEND_URL + 'api/solar/data');
         if (response.status === 200) {
           setData(response.data); // Store the fetched data in state
         } else {
