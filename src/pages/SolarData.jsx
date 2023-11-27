@@ -33,7 +33,7 @@ const SolarPanelPage = () => {
 	});
 
   return (
-    <div className="w-[80%] h-[85vh]">
+    <div className="w-[95%] h-[85vh]">
       <div className="overflow-auto">
         <TableComponent data={parsedData} />
       </div>
