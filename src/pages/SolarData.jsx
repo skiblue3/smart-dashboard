@@ -1,19 +1,44 @@
-import React from "react";
-import TableComponent from "../components/solardata/TableComponent";
-import data from "./output.json"; 
-
+import React, { useState, useEffect } from 'react';
+import TableComponent from '../components/solardata/TableComponent';
+// import data from "./output.json";
+import axios from 'axios';
 
 const SolarPanelPage = () => {
-	let parsedData = data.data;
-	console.log(data, parsedData[0])
+  const [data, setData] = useState(null);
 
-	return (
-		<div className="w-[175vh] h-[85vh] overflow-auto overflow-x-scroll ">
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8080/api/solar/data');
+        if (response.status === 200) {
+          setData(response.data); // Store the fetched data in state
+        } else {
+          throw new Error('Failed to fetch data');
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData(); // Fetch data when the component mounts
+  }, []);
+
+	if (!data) {
+		return <div>Loading...</div>; // Or any other loading indicator
+	}
+
+	const parsedData = data.data.map((obj) => {
+		const { _id, ...rest } = obj;
+		return rest;
+	});
+
+  return (
+    <div className="w-[80%] h-[85vh]">
       <div className="overflow-auto">
         <TableComponent data={parsedData} />
       </div>
     </div>
-	);
+  );
 };
 
 export default SolarPanelPage;

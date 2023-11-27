@@ -2,17 +2,19 @@ import React from 'react';
 import { HiOutlineMenu } from 'react-icons/hi';
 
 // Import your logo image file
-import logo from "./gctlogo.jpg"
+import logo from './gctlogo.jpg';
 
-export default function Header({ onSidebarToggle }) {
+export default function Header({ onSidebarToggle, isSidebarVisible }) {
   return (
-    <div className="bg-white h-16 px-4 flex items-center border-b border-gray-200 justify-between">
+    <div className="bg-white h-16 px-4 flex items-center border-b border-gray-200 justify-between w-[100vw]">
       <button onClick={onSidebarToggle} className="text-gray-500 cursor-pointer hover:text-gray-700">
         <HiOutlineMenu className="text-2xl" />
       </button>
-      <div className="flex items-center"> {/* Container for logo and title */}
-        <h1 className="text-2xl font-semibold text-gray-700 hidden lg:block">Government College of Technology</h1>
-        <img src={logo} alt="College Logo" className="h-10 lg:h-12 ml-2" /> {/* Insert your logo image */}
+      <div className="flex items-center">
+        <img src={logo} alt="College Logo" className="h-10 lg:h-12 ml-2 flex-shrink-0" />
+        <h1 className={`text-xl lg:text-2xl font-semibold text-gray-700 ml-2 pr-[${!isSidebarVisible ? "0px" : "100px"}] lg:block hidden`}>
+          Government College of Technology
+        </h1>
       </div>
     </div>
   );

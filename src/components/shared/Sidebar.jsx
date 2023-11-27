@@ -11,7 +11,7 @@ const linkClass =
 export default function Sidebar({isVisible}) {
 	const { pathname } = useLocation();
 
-
+	console.log(isVisible)
 	return (
 		<div className={classNames("bg-neutral-900 w-100 p-3 flex flex-col", { 'hidden': !isVisible }, 'lg:w-60')}>
 			<div className="flex items-center gap-2 px-1 py-3">
