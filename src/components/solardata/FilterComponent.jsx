@@ -13,6 +13,7 @@ function FilterComponent({filterHandler}) {
         const day = String(inputDate.getDate()).padStart(2, '0');
         const formattedDate = `${year}/${month}/${day}`; // Output: 2023/12/05
         return formattedDate;
+    
     }
     const fetchData = async() =>{
         const res = await axios.post("https://smart-energy-dashboard-backend.onrender.com/api/solar/filterData",{
