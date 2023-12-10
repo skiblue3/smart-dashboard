@@ -1,4 +1,5 @@
 export default function TableComponent({ data }) {
+  console.log(data, "checkkk")
   return (
     <div className="flex flex-col h-[85vh]">
       <div className="-m-1.5 ">
@@ -28,7 +29,7 @@ export default function TableComponent({ data }) {
                             className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                             key={index}
                           >
-                            {value}
+                            {value.substring(0, value.length - 8) + ' ' + value.substring(value.length - 8)}
                           </th>
                         );
                       }

@@ -17,7 +17,7 @@ function FilterComponent({filterHandler}) {
     
     }   
     const fetchData = async() =>{
-        const res = await axios.post(process.env.REACT_APP_BACKEND_URL+'/api/solar/filterData",{
+        const res = await axios.post(process.env.REACT_APP_BACKEND_URL+"api/solar/filterData",{
             startdate:fromdate,
             enddate:enddate
         });
