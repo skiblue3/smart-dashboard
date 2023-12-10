@@ -31,7 +31,7 @@ const SolarPanelPage = () => {
   }, []);
 
   const filterHandler = (filtered_data) =>{
-    if (filtered_data.length!==0){
+    if (filtered_data.data.length!==0){
       setData(filtered_data);
       console.log(data, "check2")
     }else{
