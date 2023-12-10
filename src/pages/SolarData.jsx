@@ -13,7 +13,11 @@ const SolarPanelPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+// <<<<<<< main
         const response = await axios.get(process.env.REACT_APP_BACKEND_URL+'api/solar/data');
+// =======
+//         const response = await axios.get('https://smart-energy-dashboard-backend.onrender.com/api/solar/data');
+// >>>>>>> thiru
         if (response.status === 200) {
           setData(response.data); // Store the fetched data in state
         } else {
@@ -42,9 +46,14 @@ const SolarPanelPage = () => {
 
   if (!data) {
     return <div className='md:flex md:items-center md:justify-between'>
+// <<<<<<< main
 {/* 	<DownloadButton data={parsedData} />       */}
 	    return <div>Loading...</div>; 
 
+// =======
+      {/* <DownloadButton data={parsedData} /> */}
+//       <FilterComponent />
+// >>>>>>> thiru
     </div>; // Or any other loading indicator
   }
 

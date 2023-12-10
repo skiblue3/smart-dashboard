@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { DatePicker } from 'antd';
 import axios from "axios";
@@ -13,9 +14,10 @@ function FilterComponent({filterHandler}) {
         const day = String(inputDate.getDate()).padStart(2, '0');
         const formattedDate = `${year}/${month}/${day}`; // Output: 2023/12/05
         return formattedDate;
-    }
+    
+    }   
     const fetchData = async() =>{
-        const res = await axios.post("http://localhost:8080/api/solar/filterData",{
+        const res = await axios.post(process.env.REACT_APP_BACKEND_URL+'/api/solar/filterData",{
             startdate:fromdate,
             enddate:enddate
         });
