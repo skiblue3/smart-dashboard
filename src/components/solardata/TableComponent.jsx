@@ -1,5 +1,4 @@
 export default function TableComponent({ data }) {
-  console.log(data, "checkkk")
   return (
     <div className="flex flex-col h-[85vh]">
       <div className="-m-1.5 ">

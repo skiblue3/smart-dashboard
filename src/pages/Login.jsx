@@ -10,16 +10,12 @@ const Login = ({ user, setUser }) => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      console.log('Username:', username);
-      console.log('Password:', password);
 
       const res = await axios.post(process.env.REACT_APP_BACKEND_URL + 'api/user/login', {
         username,
         password
       });
-      // console.log(res, username);
       setUser({ username: username, token: res.data.accessToken, role: res.data.user.role });
-      // console.log(user, setUser, 'check');
       setUsername('');
       setPassword('');
       await navigate('/');

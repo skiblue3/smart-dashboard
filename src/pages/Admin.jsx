@@ -8,7 +8,6 @@ const Admin = ({ user }) => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        console.log('check', user.token);
 
         const response = await axios.get(process.env.REACT_APP_BACKEND_URL + 'api/user/getAllUsers', {
           headers: {

@@ -32,7 +32,6 @@ function WeatherCard() {
   }, [latitude, longitude, API_KEY]);
 
   let result = {};
-  console.log(weatherData);
   if (weatherData) {
     result.info = weatherData.weather[0].main;
     result.curr_temp = Math.round(weatherData?.main.temp);
@@ -44,12 +43,10 @@ function WeatherCard() {
     result.humidity = weatherData.main.humidity;
   }
 
-  console.log('weather', result);
 
   const currentDate = new Date();
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const formattedDate = new Intl.DateTimeFormat('en-US', options).format(currentDate);
-  console.log(formattedDate);
 
   return (
     <div className="w-full bg-white p-4 rounded-sm border border-gray-200">

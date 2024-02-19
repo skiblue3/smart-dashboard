@@ -8,7 +8,6 @@ import { Modal } from 'antd';
 
 const SolarPanelPage = () => {
   const [data, setData] = useState(null);
-  console.log(process.env.REACT_APP_BACKEND_URL);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,7 +16,6 @@ const SolarPanelPage = () => {
 
         if (response.status === 200) {
           setData(response.data); // Store the fetched data in state
-          // console.log(data, "check3")
 
         } else {
           throw new Error('Failed to fetch data');
@@ -33,7 +31,6 @@ const SolarPanelPage = () => {
   const filterHandler = (filtered_data) =>{
     if (filtered_data.data.length!==0){
       setData(filtered_data);
-      console.log(data, "check2")
     }else{
       Modal.warning({
         title:"No data",
@@ -42,7 +39,6 @@ const SolarPanelPage = () => {
     }
   }
 
-  console.log(data, "check3")
 
   if (!data) {
 	    return <div>Loading...</div>; 

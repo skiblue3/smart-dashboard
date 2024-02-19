@@ -11,7 +11,6 @@ const linkClass =
 export default function Sidebar({ isVisible, user }) {
   const { pathname } = useLocation();
 
-  console.log(isVisible);
   return (
     <div className={classNames('bg-neutral-900 w-100 p-3 flex flex-col', { hidden: !isVisible }, 'lg:w-60')}>
       <div className="flex items-center gap-2 px-1 py-3">
@@ -26,11 +25,9 @@ export default function Sidebar({ isVisible, user }) {
       <div className="flex flex-col gap-0.5 pt-2 border-t border-neutral-700">
         {DASHBOARD_SIDEBAR_BOTTOM_LINKS.map((link) => {
           if (link.label === 'Login' && !user) {
-            console.log(user, 'login');
             return <SidebarLink key={link.key} link={link} pathname={pathname} />;
           }
           if (link.label === 'Logout' && user) {
-            console.log(user);
             return <SidebarLink key={link.key} link={link} pathname={pathname} />;
           }
           return null;

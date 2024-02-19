@@ -21,7 +21,6 @@ function FilterComponent({filterHandler}) {
             startdate:fromdate,
             enddate:enddate
         });
-        console.log(res.data.data.length);
 
         filterHandler(res.data);
     }
@@ -35,7 +34,6 @@ function FilterComponent({filterHandler}) {
                         height: '40px'
                     }}
                     onChange={(e) => {
-                        console.log(e.$d);
                         setFromdate(DateChangeHandler(e.$d));
                     }}
                 />
@@ -48,7 +46,6 @@ function FilterComponent({filterHandler}) {
                         height: '40px'
                     }}
                     onChange={(e) => {
-                        console.log(e.$d);
                         setEnddate(DateChangeHandler(e.$d));
                     }}
                 />
