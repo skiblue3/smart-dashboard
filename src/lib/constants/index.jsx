@@ -1,64 +1,62 @@
-import {
-	HiOutlineViewGrid,
-	HiOutlineCube,
-	HiOutlineShoppingCart,
-	HiOutlineUsers,
-	HiOutlineDocumentText,
-	HiOutlineAnnotation,
-	HiOutlineQuestionMarkCircle,
-	HiOutlineCog
-} from 'react-icons/hi'
+import { HiOutlineViewGrid, HiLightningBolt } from 'react-icons/hi';
+import { IoCloud, IoLogInOutline, IoSunny, IoWater } from 'react-icons/io5';
 
 export const DASHBOARD_SIDEBAR_LINKS = [
-	{
-		key: 'dashboard',
-		label: 'Dashboard',
-		path: '/',
-		icon: <HiOutlineViewGrid />
-	},
-	{
-		key: 'Solar Energy Data',
-		label: 'Solar Energy Data',
-		path: '/solardata',
-		icon: <HiOutlineCube />
-	},
-	{
-		key: 'Smart Meter',
-		label: 'Smart Meter',
-		path: '/smartmeter',
-		icon: <HiOutlineShoppingCart />
-	},
-	{
-		key: 'Weather Report',
-		label: 'Weather Report',
-		path: '/weather',
-		icon: <HiOutlineUsers />
-	},
-	// {
-	// 	key: 'transactions',
-	// 	label: 'Transactions',
-	// 	path: '/transactions',
-	// 	icon: <HiOutlineDocumentText />
-	// },
-	// {
-	// 	key: 'messages',
-	// 	label: 'Messages',
-	// 	path: '/messages',
-	// 	icon: <HiOutlineAnnotation />
-	// }
-]
+  {
+    key: 'dashboard',
+    label: 'Dashboard',
+    path: '/',
+    icon: <HiOutlineViewGrid />
+  },
+  {
+    key: 'Solar Energy Data',
+    label: 'Solar Energy Data',
+    path: '/solardata',
+    icon: <IoSunny />
+  },
+  {
+    key: 'Smart Meter',
+    label: 'Smart Meter',
+    path: '/smartmeter',
+    icon: <HiLightningBolt />
+  },
+  {
+    key: 'Weather Report',
+    label: 'Weather Report',
+    path: '/weather',
+    icon: <IoCloud />
+  },
+  {
+    key: 'Water Motor',
+    label: 'Water Motor',
+    path: '/watermotor',
+    icon: <IoWater />
+  }
+  // {
+  // 	key: 'messages',
+  // 	label: 'Messages',
+  // 	path: '/messages',
+  // 	icon: <HiOutlineAnnotation />
+  // }
+];
 
 export const DASHBOARD_SIDEBAR_BOTTOM_LINKS = [
-	{
-		key: 'settings',
-		label: 'Settings',
-		path: '/settings',
-		icon: <HiOutlineCog />
-	},
-	{
-		key: 'support',
-		label: 'Help & Support',
-		path: '/support',
-		icon: <HiOutlineQuestionMarkCircle />
-	}
-]
+  // {
+  // 	key: 'support',
+  // 	label: 'Help & Support',
+  // 	path: '/support',
+  // 	icon: <HiOutlineQuestionMarkCircle />
+  // },
+  {
+    key: 'login',
+    label: 'Login',
+    path: '/login',
+    icon: <IoLogInOutline />
+  },
+  {
+    key: 'logout',
+    label: 'Logout',
+    path: '/logout',
+    icon: <IoLogInOutline />
+  }
+];

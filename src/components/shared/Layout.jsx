@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Header from './Header';
 
-export default function Layout() {
+export default function Layout({user}) {
 	const [isSidebarVisible, setSidebarVisibility] = useState(true);
 
 	const toggleSidebar = () => {
@@ -36,7 +36,7 @@ export default function Layout() {
 
 	return (
 		<div className="bg-neutral-100 h-screen w-screen overflow-hidden flex flex-row">
-			<Sidebar isVisible={isSidebarVisible} />
+			<Sidebar isVisible={isSidebarVisible} user={user}/>
 			<div className="flex flex-col flex-1">
 				<Header onSidebarToggle={toggleSidebar} isSidebarVisible={isSidebarVisible}/>
 				<div className="flex-1 p-4 min-h-0 overflow-auto">

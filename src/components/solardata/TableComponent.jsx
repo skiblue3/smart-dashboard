@@ -28,7 +28,7 @@ export default function TableComponent({ data }) {
                             className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                             key={index}
                           >
-                            {value}
+                            {value.substring(0, value.length - 8) + ' ' + value.substring(value.length - 8)}
                           </th>
                         );
                       }

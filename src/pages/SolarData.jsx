@@ -8,14 +8,15 @@ import { Modal } from 'antd';
 
 const SolarPanelPage = () => {
   const [data, setData] = useState(null);
-  console.log(process.env.REACT_APP_BACKEND_URL);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://smart-energy-dashboard-backend.onrender.com/api/solar/data');
+        const response = await axios.get(process.env.REACT_APP_BACKEND_URL+'api/solar/data');
+
         if (response.status === 200) {
           setData(response.data); // Store the fetched data in state
+
         } else {
           throw new Error('Failed to fetch data');
         }
@@ -28,7 +29,7 @@ const SolarPanelPage = () => {
   }, []);
 
   const filterHandler = (filtered_data) =>{
-    if (filtered_data.length!==0){
+    if (filtered_data.data.length!==0){
       setData(filtered_data);
     }else{
       Modal.warning({
@@ -39,18 +40,15 @@ const SolarPanelPage = () => {
   }
 
 
-
   if (!data) {
-    return <div className='md:flex md:items-center md:justify-between'>
-      {/* <DownloadButton data={parsedData} /> */}
-      <FilterComponent />
-    </div>; // Or any other loading indicator
+	    return <div>Loading...</div>; 
   }
 
   const parsedData = data.data.map((obj) => {
     const { _id, __v, ...rest } = obj;
     return rest;
   });
+  
 
   return (
     <div className="w-[90%] h-[85vh]">
@@ -60,7 +58,7 @@ const SolarPanelPage = () => {
         <FilterComponent filterHandler={filterHandler}  />
       </div>
       <div className="overflow-auto">
-        <TableComponent data={parsedData} />
+        <TableComponent data={parsedData.length >= 100 ? parsedData.slice(0, 100) : parsedData} />
       </div>
     </div>
   );

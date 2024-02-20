@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { DatePicker } from 'antd';
 import axios from "axios";
@@ -16,11 +17,10 @@ function FilterComponent({filterHandler}) {
     
     }   
     const fetchData = async() =>{
-        const res = await axios.post("https://smart-energy-dashboard-backend.onrender.com/api/solar/filterData",{
+        const res = await axios.post(process.env.REACT_APP_BACKEND_URL+"api/solar/filterData",{
             startdate:fromdate,
             enddate:enddate
         });
-        console.log(res.data.data.length);
 
         filterHandler(res.data);
     }
@@ -34,7 +34,6 @@ function FilterComponent({filterHandler}) {
                         height: '40px'
                     }}
                     onChange={(e) => {
-                        console.log(e.$d);
                         setFromdate(DateChangeHandler(e.$d));
                     }}
                 />
@@ -47,7 +46,6 @@ function FilterComponent({filterHandler}) {
                         height: '40px'
                     }}
                     onChange={(e) => {
-                        console.log(e.$d);
                         setEnddate(DateChangeHandler(e.$d));
                     }}
                 />
