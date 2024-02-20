@@ -10,6 +10,7 @@ function App() {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Dashboard />} />
                     <Route path="solardata" element={<SolarData />} />
+                    <Route path="smartmeter" element={<SmartMeter />} />
                 </Route>
             </Routes>
         </Router>
